@@ -9,13 +9,13 @@ Idea is that the data has a linear relationship on x, y axis. Draw a line of bes
 
 General form with n independent variables --> y = β0 + β1x1 + β2x2 +…+βnxn +ϵ
 
-where x1, x2,..xn are independent vars (features)
+-- where x1, x2,..xn are independent vars (features)
 
-β0 is intercept, y when all x vals are 0
+-- β0 is intercept, y when all x vals are 0
 
-β1, .. βn are coefficients of model. change in y for one unit change in corresponding x val
+-- β1, .. βn are coefficients of model. change in y for one unit change in corresponding x val
 
-How do you find coefficients?
+---How do you find coefficients?---
 most commonly usesd is Ordinary Least Squares (OLS)
 
 find J(β) = sigma(m, i=1) (Y^(i)-y-hat^(i))^2
