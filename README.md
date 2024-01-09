@@ -7,6 +7,9 @@ Start with the basics of Machine Learning (ML). How does linear regression work,
 ### Concept
 The data has a linear relationship on the x and y axes. Draw a line of best fit through the data points, minimizing the difference between the predicted y-values and the actual y-values.
 
+### Dataset
+Using a really simple data set to understand the core concepts better. Contains Years of Experience and Salary. Will use years of experience as y to predict Salary, X. 
+
 ### Mathematical Formulation
 The general form of a linear regression model with n independent variables is:
 y = β0 + β1x1 + β2x2 + … + βnxn + ε
