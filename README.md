@@ -8,35 +8,35 @@ Start with the basics of Machine Learning (ML). How does linear regression work,
 The data has a linear relationship on the x and y axes. Draw a line of best fit through the data points, minimizing the difference between the predicted y-values and the actual y-values.
 
 ### Mathematical Formulation
-The general form of a linear regression model with \( n \) independent variables is:
-\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon \]
+The general form of a linear regression model with n independent variables is:
+y = β0 + β1x1 + β2x2 + … + βnxn + ε
 
 Where:
-- \( x_1, x_2, \ldots, x_n \) are independent variables (features).
-- \( \beta_0 \) is the intercept, the value of y when all x values are 0.
-- \( \beta_1, \ldots, \beta_n \) are the coefficients of the model, representing the change in y for a one-unit change in the corresponding x value.
+- x1, x2, ..., xn are independent variables (features).
+- β0 is the intercept, the value of y when all x values are 0.
+- β1, ..., βn are the coefficients of the model, representing the change in y for a one-unit change in the corresponding x value.
 
 ### Finding Coefficients
-The most commonly used method is Ordinary Least Squares (OLS). The objective is to minimize the cost function \( J(\beta) \), defined as:
-\[ J(\beta) = \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 \]
+The most commonly used method is Ordinary Least Squares (OLS). The objective is to minimize the cost function J(β), defined as:
+J(β) = Σ (from i=1 to m) of (yi - y-hat(i))^2
 
 Where:
-- \( m \) is the number of data points.
-- \( y^{(i)} \) is the actual value.
-- \( \hat{y}^{(i)} \) is the predicted value from the equation.
+- m is the number of data points.
+- yi is the actual value.
+- y-hat(i) is the predicted value from the equation.
 
-To minimize \( J(\beta) \), take the partial derivative of \( J \) with respect to each coefficient \( \beta_j \) and set it to zero.
+To minimize J(β), take the partial derivative of J with respect to each coefficient βj and set it to zero.
 
 ### Matrix Notation
 In matrix notation, the model is expressed as:
-\[ Y = X\beta + \epsilon \]
+Y = Xβ + ε
 
 Where:
-- \( Y \) is a vector of the dependent variable.
-- \( X \) is a matrix where each column is a vector of each independent variable, and the first column is all 1's to represent the intercept \( \beta_0 \).
-- \( \beta \) is a vector of coefficients.
-- \( \epsilon \) is a vector of errors.
+- Y is a vector of the dependent variable.
+- X is a matrix where each column is a vector of each independent variable, and the first column is all 1's to represent the intercept β0.
+- β is a vector of coefficients.
+- ε is a vector of errors.
 
 The solution to the normal equations is:
-\[ \beta = (X^T X)^{-1} X^T Y \]
-assuming \( X^T X \) is invertible.
+β = (X^T X)^(-1) X^T Y
+assuming X^T X is invertible.
