@@ -1,36 +1,42 @@
 # simple_LR
-Creating a linear regression model from scratch
+## Creating a Linear Regression Model from Scratch
 
-General idea: start with basics of ML. How does linear regression work, understand the math, implement one with very simple dataset
+### General Idea
+Start with the basics of Machine Learning (ML). How does linear regression work, understand the math, and implement one with a very simple dataset.
 
-//Notes//
+### Concept
+The data has a linear relationship on the x and y axes. Draw a line of best fit through the data points, minimizing the difference between the predicted y-values and the actual y-values.
 
-Idea is that the data has a linear relationship on x, y axis. Draw a line of best fit through data points, minimizing difference between predicted y and y.
+### Mathematical Formulation
+The general form of a linear regression model with \( n \) independent variables is:
+\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon \]
 
-General form with n independent variables --> y = β0 + β1x1 + β2x2 +…+βnxn +ϵ
+Where:
+- \( x_1, x_2, \ldots, x_n \) are independent variables (features).
+- \( \beta_0 \) is the intercept, the value of y when all x values are 0.
+- \( \beta_1, \ldots, \beta_n \) are the coefficients of the model, representing the change in y for a one-unit change in the corresponding x value.
 
--- where x1, x2,..xn are independent vars (features)
+### Finding Coefficients
+The most commonly used method is Ordinary Least Squares (OLS). The objective is to minimize the cost function \( J(\beta) \), defined as:
+\[ J(\beta) = \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 \]
 
--- β0 is intercept, y when all x vals are 0
+Where:
+- \( m \) is the number of data points.
+- \( y^{(i)} \) is the actual value.
+- \( \hat{y}^{(i)} \) is the predicted value from the equation.
 
--- β1, .. βn are coefficients of model. change in y for one unit change in corresponding x val
+To minimize \( J(\beta) \), take the partial derivative of \( J \) with respect to each coefficient \( \beta_j \) and set it to zero.
 
----How do you find coefficients?---
-most commonly usesd is Ordinary Least Squares (OLS)
+### Matrix Notation
+In matrix notation, the model is expressed as:
+\[ Y = X\beta + \epsilon \]
 
-find J(β) = sigma(m, i=1) (Y^(i)-y-hat^(i))^2
+Where:
+- \( Y \) is a vector of the dependent variable.
+- \( X \) is a matrix where each column is a vector of each independent variable, and the first column is all 1's to represent the intercept \( \beta_0 \).
+- \( \beta \) is a vector of coefficients.
+- \( \epsilon \) is a vector of errors.
 
-where m is the number of data points, y(i) is the actual value and y-hat^(i) is the predicted val given from the equation above
-
-To minimize J(β) take partial derivative of J with respect to each coefficient β j and set to zero
-
-Matrix Notation:
-
-Y = Xβ + ϵ
-
-Y is vector of dependent var, X is a matrix, each col is a vector of each independent varaible, first col is all 1's to represent intercept or β0
-
-β is vector of coefficients, ϵ is vector of errors
-
-The solution to normal equations is β = (X transposed * X)^(-1) * X transposed*Y --> assuming X^T*X is invertible
-
+The solution to the normal equations is:
+\[ \beta = (X^T X)^{-1} X^T Y \]
+assuming \( X^T X \) is invertible.
